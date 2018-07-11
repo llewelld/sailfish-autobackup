@@ -32,7 +32,7 @@ The instructions are a bit fiddly and have to be followed carefully. However, ho
 
 The last step is really important. If you don't do this, you'll leave your Settings app in a broken state. If something goes wrong, always finish with this last step of reverting the patch. If you execute option 4 more than once it will notice and won't do anything.
 
-Once you've done this, you should have a fresh backup that you can SCP off our device.
+Once you've done this, you should have a fresh backup that you can SCP off your device.
 
 ## Queries
 
