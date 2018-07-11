@@ -14,9 +14,7 @@ With the screen completely borked, manually performing the steps to trigger the 
 
 ## Use at your own risk
 
-This script hacks around with the settings QML files. It's been designed so you can revert the changes, but it's not particularly robust. I've tried it a couple of times out of necessity. It did the job, but that's all
-
-**you use this at our own risk**.
+This script hacks around with the settings QML files. It's been designed so you can revert the changes, but it's not particularly robust. I've tried it a couple of times out of necessity. It did the job, but that's all. **You use this at our own risk**.
 
 ## Usage instructions
 
