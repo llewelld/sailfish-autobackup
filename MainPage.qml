@@ -56,7 +56,11 @@ Page {
 
     on_CheckMigrationNeededChanged: {
         if (_checkMigrationNeeded) {
+            // EDIT: The following conditional has been changed for auto backup
             if (_needsMigration) {
+                console.log("Blocked migration dialogue")
+            }
+            if (false) {
                 _showMigrationDialog()
             } else {
                 _checkMigrationNeeded = false
@@ -172,6 +176,7 @@ Page {
                 importing = false
             } else if (operation == Vault.RemoveSnapshot) {
                 removingSnapshots = false
+
             }
         }
     }
@@ -303,6 +308,18 @@ Page {
             Button {
                 anchors.horizontalCenter: parent.horizontalCenter
                 enabled: backupStoragePicker.selectionValid
+
+                // EDIT: The following id and Timer blocks have been added for auto backup
+                id: backupdo
+                Timer {
+                    interval: 1000
+                    running: true
+                    repeat: FALSE
+                    onTriggered: {
+                        console.log("Auto press backup button")
+                        backupdo.clicked(null)
+                    }
+                }
 
                 //: Start process of backing up data
                 //% "Backup"

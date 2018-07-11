@@ -35,6 +35,17 @@ Dialog {
 
     default property alias _content: contentColumn.data
 
+    // EDIT: The following Timer block has been added for auto backup
+    Timer {
+        interval: 10000
+        running: true
+        repeat: false
+        onTriggered: {
+            console.log("Auto press accept button")
+            root.accept(null)
+        }
+    }
+
     acceptDestination: backupRestoreProgressComponent
 
     SilicaFlickable {
@@ -129,9 +140,13 @@ Dialog {
             Connections {
                 target: progressPage.backupRestore
                 onDone: {
+                    // EDIT: The following line has been added for auto backup
+                    console.log("Backup completed")
                     root.operationFinished(true)
                 }
                 onError: {
+                    // EDIT: The following line has been added for auto backup
+                    console.log("Backup error")
                     root.operationFinished(false)
                 }
             }
