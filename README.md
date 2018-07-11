@@ -27,7 +27,7 @@ The instructions are a bit fiddly and have to be followed carefully. However, ho
 5. On **console 0** enter `devel-su ./autobackup.sh` and select option 1 "Install patch".
 6. On **console 1** enter `devel-su -p ./autobackup.sh` and select option 2 "Execute jolla-settings". You'll see the output from the executing Settings application in this console from now on.
 7. On **console 0** enter `devel-su ./autobackup.sh` and select option 3 "Trigger backup". Back on console 1 you should be able to observe the backup taking place. It can take a while so don't panic: there's a coded 10 second delay before the backup is triggered.
-8. On **console 1** you'll see `[D] expression for onDone:144 - Backup completed` once the backup process has finished. At this point you can quick the Settings app by typing `Ctrl-C`.
+8. On **console 1** you'll see `[D] expression for onDone:144 - Backup completed` once the backup process has finished. At this point you can quit the Settings app by typing `Ctrl-C`.
 9. On **console 0** enter `devel-su ./autobackup.sh` and select option 4. This will revert the patch and leave the Settings app as it was before.
 
 The last step is really important. If you don't do this, you'll leave your Settings app in a broken state. If something goes wrong, always finish with this last step of reverting the patch. If you execute option 4 more than once it will notice and won't do anything.
